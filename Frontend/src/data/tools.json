@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "icon": "book",
+      "path":"mcq",
+      "name": "MCQ Generator",
+      "description": "Create multiple-choice questions with ease."
+    },
+    {
+      "id": 2,
+      "icon": "video",
+      "path":"yt",
+      "name": "YouTube Video Ideas",
+      "description": "Get AI-powered video content suggestions."
+    },
+    {
+      "id": 3,
+      "icon": "file-text",
+      "path":"summary",
+      "name": "AI Text Summarizer",
+      "description": "Summarize long text into short key points."
+    }
+  ]
+  

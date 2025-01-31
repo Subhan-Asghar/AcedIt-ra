@@ -5,8 +5,8 @@ import { Book, Video, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const iconMap = {
-  book: <Book size={25} className="text-white" />,
-  video: <Video size={25} className="text-white" />,
+  "book": <Book size={25} className="text-white" />,
+  "video": <Video size={25} className="text-white" />,
   "file-text": <FileText size={25} className="text-white" />
 };
 

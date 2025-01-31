@@ -2,7 +2,7 @@
     {
       "id": 1,
       "icon": "book",
-      "path":"mcq",
+      "path":"mcqform",
       "name": "MCQ Generator",
       "description": "Create multiple-choice questions with ease."
     },

@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-CORS(app, origins=["http://localhost:5173", "https://ai-relay.vercel.app"], supports_credentials=True)
+CORS(app, origins=["http://localhost:5173", "https://acedit.vercel.app"], supports_credentials=True)
 
 @app.route("/api/mcq",methods=['POST'])
 def fun():

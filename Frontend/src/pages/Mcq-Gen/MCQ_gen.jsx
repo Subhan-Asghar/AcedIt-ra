@@ -16,7 +16,7 @@ const MCQ_gen = () => {
     useEffect(() => {
         const info = { num, topic, grade };
 
-        axios.post("http://localhost:5000/api/mcq", { info })
+        axios.post("https://acedit-server.vercel.app/api/mcq", { info })
             .then((res) => {
                 const result = res.data.message;
                 setQuestions(result.questions);

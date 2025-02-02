@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from mcq_agent import mcq_return
-from text_summarizer import summary
+from text_summarizer import summary as summarize 
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def summary():
         # Get JSON data from request
         data = request.json
         input_text = data.get('input_text')
-        result = summary(input_text)
+        result = summarize(input_text)
         
         return jsonify({"message": result}), 200
     except Exception as e:

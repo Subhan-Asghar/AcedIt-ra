@@ -16,8 +16,8 @@
     {
       "id": 3,
       "icon": "file-text",
-      "path":"summary",
-      "name": "AI Text Summarizer",
+      "path":"textsummary",
+      "name": "Text Summarizer",
       "description": "Summarize long text into short key points."
     }
   ]

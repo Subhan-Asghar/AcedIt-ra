@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from mcq_agent import mcq_return
+from text_summarizer import summary
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -8,7 +9,7 @@ app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173", "https://acedit.vercel.app"], supports_credentials=True)
 
 @app.route("/api/mcq", methods=['POST'])
-def fun():
+def mcq():
     try:
         # Get JSON data from request
         data = request.json
@@ -16,6 +17,19 @@ def fun():
         result = mcq_return(info)
         
         # Send back the generated questions
+        return jsonify({"message": result}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({"message": "Error"}), 400
+
+@app.route("/api/text", methods=['POST'])
+def summary():
+    try:
+        # Get JSON data from request
+        data = request.json
+        input_text = data.get('input_text')
+        result = summary(input_text)
+        
         return jsonify({"message": result}), 200
     except Exception as e:
         print(e)

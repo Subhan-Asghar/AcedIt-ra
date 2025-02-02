@@ -43,5 +43,5 @@ def mcq_return(info:dict):
         "topic": info.get('topic'),
         "grade": info.get('grade'),
     })
-    print(result)
-    return result  # Return JSON object (not string)
+    
+    return result  

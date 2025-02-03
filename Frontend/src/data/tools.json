@@ -2,7 +2,7 @@
     {
       "id": 1,
       "icon": "book",
-      "path":"mcqform",
+      "path":"mcq-form",
       "name": "MCQ Generator",
       "description": "Create multiple-choice questions with ease."
     },
@@ -16,16 +16,23 @@
     {
       "id": 3,
       "icon": "file-text",
-      "path":"textsummary",
+      "path":"text-summary",
       "name": "Text Summarizer",
       "description": "Summarize long text into short key points."
     },
     {
       "id": 4,
       "icon": "book",
-      "path":"testquestion",
+      "path":"test-question",
       "name": "Test Questions",
       "description": "Create multiple test questions with ease."
+    },
+    {
+      "id": 5,
+      "icon": "file-text",
+      "path":"worksheet",
+      "name": "Worksheet Generator",
+      "description": "Generate a worksheet based on any topin or text."
     }
   ]
   

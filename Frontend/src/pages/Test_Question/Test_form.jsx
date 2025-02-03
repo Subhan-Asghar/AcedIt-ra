@@ -86,7 +86,7 @@ const Test_form = () => {
 
           {/* Submit Button */}
           <div className="text-center">
-            <Link to={`/testquestiongen?num=${num}&topic=${topic}&grade=${grade}`}>
+            <Link to={`/test-question-gen?num=${num}&topic=${topic}&grade=${grade}`}>
               <button
                 type="submit"
                 className="px-6 py-3 bg-pink-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition-transform duration-200 cursor-pointer"

@@ -32,7 +32,7 @@ const Text_form = () => {
           </div>
 
           <div className="text-center">
-            <Link to={`/textsummarygen?text=${text}`}>
+            <Link to={`/text-summary-gen?text=${text}`}>
               <button
                 type="submit"
                 className="px-6 py-3 bg-pink-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition-transform duration-200 cursor-pointer"

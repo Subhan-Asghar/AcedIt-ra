@@ -18,6 +18,8 @@ const MCQ_gen = () => {
 
     axios
       .post("http://127.0.0.1:5000/api/mcq", { info })
+      //https://acedit-server.vercel.app/
+      //http://127.0.0.1:5000
       .then((res) => {
         setQuestions(res.data.message.questions);
       })

@@ -19,6 +19,13 @@
       "path":"textsummary",
       "name": "Text Summarizer",
       "description": "Summarize long text into short key points."
+    },
+    {
+      "id": 4,
+      "icon": "book",
+      "path":"testquestion",
+      "name": "Test Questions",
+      "description": "Create multiple test questions with ease."
     }
   ]
   

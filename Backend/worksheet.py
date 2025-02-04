@@ -43,7 +43,7 @@ chat_prompt = ChatPromptTemplate.from_messages([
         "   }}\n"
         "}}"
     ),
-    ("human", "Generate {num} multiple-choice, fill-in-the-blank, and test questions on '{topic}' for grade '{grade}'.")
+    ("human", "Generate {num} of multiple-choice, {num} of fill-in-the-blank, and {num} of test questions on '{topic}' for grade '{grade}'.")
 ])
 
 # Create Chain

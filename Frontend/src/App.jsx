@@ -8,6 +8,8 @@ import Test_form from "./pages/Test_Question/Test_form"
 import Test_gen from "./pages/Test_Question/Test_gen"
 import Worksheet_form from "./pages/Worksheet/worksheet_form"
 import Worksheet_gen from "./pages/Worksheet/worksheet_gen"
+import Proofread_form from "./pages/Proofread/Proofread_form"
+import Proofread_gen from "./pages/Proofread/Proofread_gen"
 
 function App() {
   
@@ -23,6 +25,8 @@ function App() {
       <Route path="/test-question-gen" element={<Test_gen/>} />
       <Route path="/worksheet" element={<Worksheet_form/>} />
       <Route path="/worksheet-gen" element={<Worksheet_gen/>} />
+      <Route path="/proofread" element={<Proofread_form/>} />
+      <Route path="/proofread-gen" element={<Proofread_gen/>} />
 
     </Routes>
      

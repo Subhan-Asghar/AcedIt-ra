@@ -11,7 +11,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className="text-gray-700 hover:text-pink-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 rounded"
+              className="text-gray-700 hover:text-pink-500 transition duration-200 "
             >
               Home
             </Link>
@@ -19,7 +19,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
-              className="text-gray-700 hover:text-pink-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 rounded"
+              className="text-gray-700 hover:text-pink-500 transition duration-200 "
             >
               About
             </Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-pink-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 rounded"
+              className="text-gray-700 hover:text-pink-500 transition duration-200 "
             >
               Contact
             </Link>

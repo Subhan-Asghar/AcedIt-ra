@@ -10,6 +10,8 @@ import Worksheet_form from "./pages/Worksheet/worksheet_form"
 import Worksheet_gen from "./pages/Worksheet/worksheet_gen"
 import Proofread_form from "./pages/Proofread/Proofread_form"
 import Proofread_gen from "./pages/Proofread/Proofread_gen"
+import Yt_form from "./pages/Yt-Questions/Yt_form"
+import Yt_gen from "./pages/Yt-Questions/Yt_gen"
 
 function App() {
   
@@ -27,6 +29,8 @@ function App() {
       <Route path="/worksheet-gen" element={<Worksheet_gen/>} />
       <Route path="/proofread" element={<Proofread_form/>} />
       <Route path="/proofread-gen" element={<Proofread_gen/>} />
+      <Route path="/yt" element={<Yt_form/>} />
+      <Route path="/yt-gen" element={<Yt_gen/>} />
 
     </Routes>
      

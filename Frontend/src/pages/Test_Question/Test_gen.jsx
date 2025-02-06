@@ -45,7 +45,7 @@ const Test_gen = () => {
           Generated Questions
         </h2>
         <p className="text-gray-600 mt-3 text-center">
-          Here are your multiple-choice questions on{" "}
+          Here are your questions on{" "}
           <span className="text-pink-500 font-medium">{topic}</span> for{" "}
           <span className="text-pink-500 font-medium">
             {grade === "undergraduate"

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Yt_form = () => {
   const [link, setLink] = useState("");
+  const [num, setNum] = useState("");
   return (
     <>
      <Navbar />
@@ -28,9 +29,28 @@ const Yt_form = () => {
               required
             />
           </div>
+          <div>
+            <label
+              htmlFor="num"
+              className="block text-gray-700 text-base font-medium"
+            >
+              Number of Questions (1 to 20)
+            </label>
+            <input
+              type="number"
+              id="num"
+              value={num}
+              onChange={(e) => setNum(Math.min(20, Math.max(1, e.target.value)))}
+              className="mt-3 w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:outline-none transition"
+              placeholder="Enter number of questions"
+              min="1"
+              max="20"
+              required
+            />
+          </div>
 
           <div className="text-center">
-            <Link to={`/yt-gen?link=${link}`}>
+            <Link to={`/yt-gen?link=${link}&num=${num}`}>
               <button
                 type="submit"
                 className="px-6 py-3 bg-pink-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition-transform duration-200 cursor-pointer"

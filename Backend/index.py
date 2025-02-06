@@ -4,6 +4,7 @@ from text_summarizer import summary as summarize
 from test_question import test_questions as question_return
 from worksheet import generate_worksheet
 from proofread import proof_read
+from yt_questions import yt_qreturn
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -76,6 +77,18 @@ def proofread():
         input_text = data.get('input_text')
         result = proof_read(input_text)
         
+        return jsonify({"message": result}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({"message": "Error"}), 400
+
+@app.route("/api/yt", methods=['POST'])
+def yt():
+    try:
+    
+        data = request.json
+        info = data.get('info')
+        result = yt_qreturn(info)
         return jsonify({"message": result}), 200
     except Exception as e:
         print(e)

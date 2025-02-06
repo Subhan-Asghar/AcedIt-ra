@@ -1,15 +1,17 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import tools from "../data/tools.json";
-import { Book, Video, FileText } from "lucide-react"; 
+import { Book, Video, FileText, ClipboardCheck, FileEdit, FilePlus } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const iconMap = {
-  "book": <Book size={20} className="text-white" />,
-  "video": <Video size={20} className="text-white" />,
-  "file-text": <FileText size={20} className="text-white" />
+  "book": <Book size={20} className="text-white" />, 
+  "video": <Video size={20} className="text-white" />, 
+  "file-text": <FileText size={20} className="text-white" />, 
+  "clipboard": <ClipboardCheck size={20} className="text-white" />, 
+  "edit": <FileEdit size={20} className="text-white" />,
+  "plus": <FilePlus size={20} className="text-white" /> 
 };
-
 const Home = () => {
   return (
     <>

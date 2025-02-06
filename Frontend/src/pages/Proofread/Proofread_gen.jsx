@@ -19,8 +19,9 @@ const ProofreadGen = () => {
       .then((res) => {
         const result = res.data.message.text[0];
         setImproved(result.improved_text);
-        setBulletPoints(result.changes);
+        setBulletPoints(result.Changing);
         setLoading(false);
+        console.log(result)
       })
       .catch((err) => {
         console.error("Error fetching text proofread:", err);

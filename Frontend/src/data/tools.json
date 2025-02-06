@@ -1,45 +1,44 @@
 [
-    {
-      "id": 1,
-      "icon": "book",
-      "path":"mcq-form",
-      "name": "MCQ Generator",
-      "description": "Create multiple-choice questions with ease."
-    },
-    {
-      "id": 2,
-      "icon": "video",
-      "path":"yt",
-      "name": "YouTube Video Questions",
-      "description": "Get AI-powered yt video questions."
-    },
-    {
-      "id": 3,
-      "icon": "file-text",
-      "path":"text-summary",
-      "name": "Text Summarizer",
-      "description": "Summarize long text into short key points."
-    },
-    {
-      "id": 4,
-      "icon": "book",
-      "path":"test-question",
-      "name": "Test Questions",
-      "description": "Create multiple test questions with ease."
-    },
-    {
-      "id": 5,
-      "icon": "file-text",
-      "path":"worksheet",
-      "name": "Worksheet Generator",
-      "description": "Generate a worksheet based on any topin or text."
-    },
-    {
-      "id": 6,
-      "icon": "file-text",
-      "path":"proofread",
-      "name": "Proof Read",
-      "description": "Correcting grammar, spelling, punctuation and adding clarity"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "icon": "book",
+    "path": "mcq-form",
+    "name": "MCQ Generator",
+    "description": "Create multiple-choice questions with ease."
+  },
+  {
+    "id": 2,
+    "icon": "video",
+    "path": "yt",
+    "name": "YouTube Video Questions",
+    "description": "Get AI-powered YouTube video questions."
+  },
+  {
+    "id": 3,
+    "icon": "file-text",
+    "path": "text-summary",
+    "name": "Text Summarizer",
+    "description": "Summarize long text into short key points."
+  },
+  {
+    "id": 4,
+    "icon": "book",
+    "path": "test-question",
+    "name": "Test Questions",
+    "description": "Create multiple test questions with ease."
+  },
+  {
+    "id": 5,
+    "icon": "clipboard",
+    "path": "worksheet",
+    "name": "Worksheet Generator",
+    "description": "Generate a worksheet based on any topic or text."
+  },
+  {
+    "id": 6,
+    "icon": "edit",
+    "path": "proofread",
+    "name": "Proof Read",
+    "description": "Correct grammar, spelling, punctuation, and add clarity."
+  }
+]

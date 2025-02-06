@@ -9,7 +9,7 @@ const Worksheet_gen = () => {
   const num = queryParams.get("num");
   const topic = queryParams.get("topic");
   const grade = queryParams.get("grade");
-
+  const [loading, setLoading] = useState(true);
   const [mcq_questions, setMcqQuestions] = useState([]);
   const [fill_in, setFillIn] = useState([]);
   const [test_q, setTestQ] = useState([]);
@@ -24,9 +24,11 @@ const Worksheet_gen = () => {
         setFillIn(result.fill_in_the_blanks);
         setMcqQuestions(result.mcq_questions);
         setTestQ(result.test_questions);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching Worksheet:", err);
+        setLoading(false);
       });
   }, [num, topic, grade]);
 
@@ -47,8 +49,10 @@ const Worksheet_gen = () => {
               : `Grade ${grade}`}
           </span>.
         </p>
-
-        <div className="mt-8 space-y-8 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        {loading? (
+         <p className="text-center text-gray-500">Loading...</p>
+      ):<>
+      <div className="mt-8 space-y-8 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
           {/* MCQ Questions */}
           <div>
             <h2 className="text-xl font-semibold mb-4 text-blue-600">Multiple Choice Questions</h2>
@@ -105,6 +109,9 @@ const Worksheet_gen = () => {
             )}
           </div>
         </div>
+      </>}
+
+        
       </div>
     </>
   );

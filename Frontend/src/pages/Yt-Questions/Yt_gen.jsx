@@ -8,7 +8,7 @@ const Yt_gen = () => {
     const queryParams = new URLSearchParams(location.search);
     const url = queryParams.get("link");
     const num = queryParams.get("num");
-  
+    const [loading, setLoading] = useState(true);
     const [questions, setQuestions] = useState([]);
     const [showAnswers, setShowAnswers] = useState({});
        useEffect(() => {
@@ -17,11 +17,12 @@ const Yt_gen = () => {
           .post("http://127.0.0.1:5000/api/yt", { info })
           .then((res) => {
             const result = res.data.message;
-            console.log(result)
+            setLoading(false);
             setQuestions(res.data.message.questions);
           })
           .catch((err) => {
             console.error("Error fetching yt :", err);
+             setLoading(false);
             
           });
       }, [url,num]);
@@ -41,8 +42,11 @@ const Yt_gen = () => {
         <h2 className="text-4xl font-semibold text-gray-900 text-center">
           Generated Questions
         </h2>
-        {/* Questions List */}
-        <div className="mt-8 space-y-8 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        {loading? (
+         <p className="text-center text-gray-500">Loading...</p>
+      ):<>
+       {/* Questions List */}
+       <div className="mt-8 space-y-8 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
           {questions.length > 0 ? (
             questions.map((q, index) => (
               <div key={index} className="text-gray-800 text-lg border-b pb-4">
@@ -71,6 +75,8 @@ const Yt_gen = () => {
             <p className="text-gray-500 text-center mt-6">No Questions generated yet.</p>
           )}
         </div>
+      </>}
+       
       </div>
     </>
   )

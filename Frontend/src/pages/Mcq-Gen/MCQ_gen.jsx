@@ -9,7 +9,7 @@ const MCQ_gen = () => {
   const num = queryParams.get("num");
   const topic = queryParams.get("topic");
   const grade = queryParams.get("grade");
-
+  const [loading, setLoading] = useState(true);
   const [questions, setQuestions] = useState([]);
   const [showAnswers, setShowAnswers] = useState({});
 
@@ -22,9 +22,11 @@ const MCQ_gen = () => {
       //http://127.0.0.1:5000
       .then((res) => {
         setQuestions(res.data.message.questions);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching MCQs:", err);
+        setLoading(false);
       });
   }, [num, topic, grade]);
 
@@ -55,6 +57,10 @@ const MCQ_gen = () => {
           .
         </p>
 
+        {loading? (
+         <p className="text-center text-gray-500">Loading...</p>
+      ):<>
+      
         {/* MCQ List */}
         <div className="mt-8 space-y-8 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
           {questions.length > 0 ? (
@@ -97,6 +103,8 @@ const MCQ_gen = () => {
             <p className="text-gray-500 text-center mt-6">No MCQs generated yet.</p>
           )}
         </div>
+      </>}
+       
       </div>
     </>
   );

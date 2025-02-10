@@ -5,6 +5,7 @@ from test_question import test_questions as question_return
 from worksheet import generate_worksheet
 from proofread import proof_read
 from yt_questions import yt_qreturn
+from math_agent import math_return
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -89,6 +90,18 @@ def yt():
         data = request.json
         info = data.get('info')
         result = yt_qreturn(info)
+        return jsonify({"message": result}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({"message": "Error"}), 400
+
+@app.route("/api/math", methods=['POST'])
+def math_route():
+    try:
+    
+        data = request.json
+        input_q = data.get('input_text')
+        result =math_return(input_q)
         return jsonify({"message": result}), 200
     except Exception as e:
         print(e)

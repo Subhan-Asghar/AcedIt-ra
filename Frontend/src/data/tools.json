@@ -40,5 +40,12 @@
     "path": "proofread",
     "name": "Proof Read",
     "description": "Correct grammar, spelling, punctuation, and add clarity."
+  },
+  {
+    "id": 7,
+    "icon": "calculator",
+    "path": "math",
+    "name": "Math Solver",
+    "description": "Solve complex math problems and equations with AI assistance."
   }
 ]

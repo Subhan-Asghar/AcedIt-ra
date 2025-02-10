@@ -12,6 +12,8 @@ import Proofread_form from "./pages/Proofread/Proofread_form"
 import Proofread_gen from "./pages/Proofread/Proofread_gen"
 import Yt_form from "./pages/Yt-Questions/Yt_form"
 import Yt_gen from "./pages/Yt-Questions/Yt_gen"
+import Math_form from "./pages/Math-Solver/Math_form"
+import Math_gen from "./pages/Math-Solver/Math_gen"
 
 function App() {
   
@@ -31,6 +33,9 @@ function App() {
       <Route path="/proofread-gen" element={<Proofread_gen/>} />
       <Route path="/yt" element={<Yt_form/>} />
       <Route path="/yt-gen" element={<Yt_gen/>} />
+      <Route path="/math" element={<Math_form/>} />
+      <Route path="/math-gen" element={<Math_gen/>} />
+      
 
     </Routes>
      

@@ -11,20 +11,16 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Enable CORS globally for your frontend URLs
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-
-@app.after_request
-def add_cors_headers(response):
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
-    return response
+CORS(app, resources={r"/*": {"origins": "https://acedit.vercel.app"}}, supports_credentials=True)
 
 # Handle preflight requests
 @app.route('/api/<path:subpath>', methods=['OPTIONS'])
 def handle_options(subpath):
-    return jsonify({"message": "CORS Preflight OK"}), 200
-
+    response = jsonify({"message": "CORS Preflight OK"})
+    response.headers["Access-Control-Allow-Origin"] = "https://acedit.vercel.app"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
 
 @app.route("/api/mcq", methods=['OPTIONS', 'POST'])
 def mcq():

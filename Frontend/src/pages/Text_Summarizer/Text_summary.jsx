@@ -15,7 +15,7 @@ const TextSummary = () => {
 
   useEffect(() => {
     axios
-      .post("http://127.0.0.1:5000/api/text", { input_text })
+      .post("https://acedit-server.vercel.app/api/text", { input_text })
       .then((res) => {
         const result = res.data.message.summary[0];
         console.log(result)

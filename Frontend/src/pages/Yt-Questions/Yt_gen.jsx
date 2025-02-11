@@ -14,7 +14,7 @@ const Yt_gen = () => {
        useEffect(() => {
         const info = { num, url };
         axios
-          .post("http://127.0.0.1:5000/api/yt", { info })
+          .post("https://acedit-server.vercel.app/api/yt", { info })
           .then((res) => {
             const result = res.data.message;
             setLoading(false);

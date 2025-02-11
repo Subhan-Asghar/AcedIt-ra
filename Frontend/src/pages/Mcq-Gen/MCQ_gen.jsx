@@ -17,7 +17,7 @@ const MCQ_gen = () => {
     const info = { num, topic, grade };
 
     axios
-      .post("http://127.0.0.1:5000/api/mcq", { info })
+      .post("https://acedit-server.vercel.app/api/mcq", { info })
       //https://acedit-server.vercel.app/
       //http://127.0.0.1:5000
       .then((res) => {

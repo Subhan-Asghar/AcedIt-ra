@@ -15,7 +15,7 @@ const ProofreadGen = () => {
 
   useEffect(() => {
     axios
-      .post("http://127.0.0.1:5000/api/proofread", { input_text })
+      .post("https://acedit-server.vercel.app/api/proofread", { input_text })
       .then((res) => {
         const result = res.data.message.text[0];
         setImproved(result.improved_text);

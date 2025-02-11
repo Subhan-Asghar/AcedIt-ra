@@ -18,7 +18,7 @@ const Worksheet_gen = () => {
     const info = { num, topic, grade };
 
     axios
-      .post("http://127.0.0.1:5000/api/worksheet", { info })
+      .post("https://acedit-server.vercel.app/api/worksheet", { info })
       .then((res) => {
         const result = res.data.message.worksheet;
         setFillIn(result.fill_in_the_blanks);

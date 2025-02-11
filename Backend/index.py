@@ -11,9 +11,22 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Enable CORS globally for your frontend URLs
-CORS(app, origins=["http://localhost:5173", "https://acedit.vercel.app"], supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
-@app.route("/api/mcq", methods=['POST'])
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
+
+# Handle preflight requests
+@app.route('/api/<path:subpath>', methods=['OPTIONS'])
+def handle_options(subpath):
+    return jsonify({"message": "CORS Preflight OK"}), 200
+
+
+@app.route("/api/mcq", methods=['OPTIONS', 'POST'])
 def mcq():
     try:
         # Get JSON data from request
@@ -28,7 +41,7 @@ def mcq():
         return jsonify({"message": "Error"}), 400
 
 
-@app.route("/api/text", methods=['POST'])
+@app.route("/api/text", methods=['OPTIONS', 'POST'])
 def summary():
     try:
         # Get JSON data from request
@@ -42,7 +55,7 @@ def summary():
         return jsonify({"message": "Error"}), 400
 
 
-@app.route("/api/test", methods=['POST'])
+@app.route("/api/test", methods=['OPTIONS', 'POST'])
 def test_q():
     try:
     
@@ -56,7 +69,7 @@ def test_q():
         return jsonify({"message": "Error"}), 400
 
 
-@app.route("/api/worksheet", methods=['POST'])
+@app.route("/api/worksheet", methods=['OPTIONS', 'POST'])
 def work_sheet():
     try:
     
@@ -70,7 +83,7 @@ def work_sheet():
         return jsonify({"message": "Error"}), 400
     
 
-@app.route("/api/proofread", methods=['POST'])
+@app.route("/api/proofread", methods=['OPTIONS', 'POST'])
 def proofread():
     try:
     
@@ -83,7 +96,7 @@ def proofread():
         print(e)
         return jsonify({"message": "Error"}), 400
 
-@app.route("/api/yt", methods=['POST'])
+@app.route("/api/yt", methods=['OPTIONS', 'POST'])
 def yt():
     try:
     
@@ -95,7 +108,7 @@ def yt():
         print(e)
         return jsonify({"message": "Error"}), 400
 
-@app.route("/api/math", methods=['POST'])
+@app.route("/api/math", methods=['OPTIONS', 'POST'])
 def math_route():
     try:
     

@@ -31,6 +31,6 @@ chain=chat|model| JsonOutputParser();
 
 def math_return(input_q):
     result=chain.invoke({
-        "pro":{input_q}
+        "pro":input_q
     })
     return result

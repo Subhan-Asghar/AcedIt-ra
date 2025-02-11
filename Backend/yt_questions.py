@@ -47,7 +47,6 @@ def get_youtube_transcript(video_id):
 def yt_qreturn(info: dict):
 
     try:
-        # Extract video ID from URL
         url=info.get('url')
         num=info.get('num')
         match = re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", url)
